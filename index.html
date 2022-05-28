@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 
+      
+
+      <div id="movies"></div>
+   -->
+    <div id="navbar">
+      <div id="title">
+        <p>Movie<span id="finder">Finder</span></p>
+      </div>
+
+      <div id="searchBar">
+        <input
+          type="text"
+          id="query"
+          oninput="debounceFunction(main,1000)"
+          placeholder="Enter Movie Title ..."
+        />
+
+        <button id="searchButton" onclick="main()">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
+            id="searchImg"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div id="searchBox"></div>
+
+    <div id="main">
+      <div id="movie"></div>
+    </div>
+  </body>
+</html>
+<script src="main.js"></script>
