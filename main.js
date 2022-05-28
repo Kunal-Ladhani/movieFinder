@@ -189,7 +189,18 @@ function showMovieData(movieObject) {
   language.id="language";
   language.innerText = "Language : "+ movieObject.Language;
 
-  movieInfo.append(list,genre,writer,actors,language);
+  let rating = document.createElement("p");
+  rating.id="rating";
+  rating.innerText = "imdB Rating : "+ movieObject.imdbRating;
+  
+  movieInfo.append(list,genre,writer,actors,language,rating);
+
+  if(Number(movieObject.imdbRating) > 8.5) {
+    let recommended = document.createElement("p");
+    recommended.innerText = "RECOMMENDED!";
+    movieInfo.appendChild(recommended);
+  }
+
 
   movie.append(moviePoster,movieInfo);
 }
