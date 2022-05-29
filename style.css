@@ -19,26 +19,46 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 11px;
+    width: 10px;
 }
   
 body {
     scrollbar-width: thin;
-    scrollbar-color:red yellow;  
+    scrollbar-color:var(--yellow-color) var(--md-dark-color);  
 }
 
 body::-webkit-scrollbar-track {
-    background: yellow;
+    background: var(--dark-color);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: red ;
+    background-color: var(--yellow-color);
     border-radius: 6px;
-    border: 3px solid yellow;
+    border: 3px solid var(--light-dark-color);
+}
+
+#searchBox::-webkit-scrollbar {
+    width: 10px;
+}
+  
+#searchBox {
+    scrollbar-width: thin;
+    scrollbar-color:var(--yellow-color) var(--md-dark-color);  
+}
+
+#searchBox::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+
+#searchBox::-webkit-scrollbar-thumb {
+    background-color: var(--yellow-color);
+    border-radius: 6px;
+    border: 3px solid var(--light-dark-color);
 }
 
 #navbar {
     height: 60px;
+    width: auto;
     background-color: var(--md-dark-color);
     color: white;
     display: flex;
@@ -49,7 +69,7 @@ body::-webkit-scrollbar-thumb {
 
 #title {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 35px;
 }
 
@@ -60,9 +80,19 @@ body::-webkit-scrollbar-thumb {
 
     margin-top: 10px;
     padding-right: 50px;
-    /* border: 1px solid red; */
+    border: 1px solid red; 
 }
 
+a {
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
 input {
     width: 250px;
     height: 30px;
@@ -102,12 +132,12 @@ input {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     height: 91vh;
 }
 
 #movie {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     height: 500px;
     width: 600px;
     border-radius: 15px;
@@ -121,20 +151,18 @@ input {
 }
 
 #searchBox {
-    /* border : 1px solid yellow; */
+    border : 1px solid yellow;
     height: 300px;
     width: 250px;
     position: absolute;
     right: 87px;
     top: 50px;
-    /* border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px; */
     color:white;
     overflow: auto;
     text-indent: 10px;
 }
 
-/* 
+ 
 #movieTitle{
     border :  1px solid blueviolet;
 }
@@ -145,4 +173,4 @@ input {
 
 #movieInfo {
     border : 1px solid yellow;
-} */
+} 
