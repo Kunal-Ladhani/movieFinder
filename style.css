@@ -80,7 +80,7 @@ body::-webkit-scrollbar-thumb {
 
     margin-top: 10px;
     padding-right: 50px;
-    border: 1px solid red; 
+    /* border: 1px solid red;  */
 }
 
 a {
@@ -132,12 +132,12 @@ input {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 91vh;
 }
 
 #movie {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 500px;
     width: 600px;
     border-radius: 15px;
@@ -151,7 +151,7 @@ input {
 }
 
 #searchBox {
-    border : 1px solid yellow;
+    /* border : 1px solid yellow; */
     height: 300px;
     width: 250px;
     position: absolute;
@@ -164,13 +164,13 @@ input {
 
  
 #movieTitle{
-    border :  1px solid blueviolet;
+    /* border :  1px solid blueviolet; */
 }
     
 #moviePoster {
-    border : 1px solid green;
+    /* border : 1px solid green; */
 }
 
 #movieInfo {
-    border : 1px solid yellow;
+    /* border : 1px solid yellow; */
 } 

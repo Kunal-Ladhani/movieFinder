@@ -12,9 +12,9 @@ async function searchMovie(movieName) {
   }
 }
 
+
 async function main() {
   let query = document.getElementById("query").value;
-
   let response = searchMovie(query);
   let data = await response;
 
@@ -37,18 +37,22 @@ function debounceFunction(func, delay) {
 let searchBox = document.getElementById("searchBox");
 
 function showMovieList(movieArray) {
-  console.log(movieArray);
-  
   searchBox.innerHTML = null;
   searchBox.style.backgroundColor = "none";
 
+  let query = document.getElementById("query").value;
+  if(query == '') {
+    searchBox.style.display = "none";
+  } else {
+    searchBox.style.display = "block";
+  }
   if(movieArray === undefined) {
     return false;
   }
   
   movieArray.forEach(function(Movie) {
     searchBox.style.backgroundColor = "#1d1d1d";
-    
+
     let movie = document.createElement("div");
     movie.style.display = "flex";
     movie.style.gap = "10px";
