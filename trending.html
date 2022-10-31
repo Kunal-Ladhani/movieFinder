@@ -1,102 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Treding Movies</title>
-  </head>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-      overflow-x: hidden;
-    }
-    #main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: auto;
-      width: auto;
-      margin-bottom: 50px;
-      border: none;
-    }
-    #movie {
-      width: 90%;
-      height: auto;
-      margin-top: 50px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(auto, auto);
-      gap: 50px 10px;
-      align-items: center;
-      justify-content: center;
-      border: none;
-    }
-    #searchBar {
-      border: none;
-    }
-  </style>
 
-  <body>
-    <div id="navbar">
-      <div id="title">
-        <p>Movie<span id="finder">Finder</span></p>
-      </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Treding Movies</title>
+</head>
+<link rel="stylesheet" href="style.css" />
+<style>
+	body {
+		display: flex;
+		flex-direction: column;
+		overflow: auto;
+		overflow-x: hidden;
+	}
 
-      <div id="searchBar">
-        <a href="index.html">SEARCH MOVIES</a>
-      </div>
-    </div>
-    <div id="main">
-      <div id="movie"></div>
-    </div>
-  </body>
+	#main {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		width: auto;
+		margin-bottom: 50px;
+		border: none;
+	}
+
+	#movie {
+		width: 90%;
+		height: auto;
+		margin-top: 50px;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(auto, auto);
+		gap: 50px 10px;
+		align-items: center;
+		justify-content: center;
+		border: none;
+	}
+
+	#searchBar {
+		border: none;
+	}
+</style>
+
+<body>
+	<div id="navbar">
+		<div id="title">
+			<p>Movie<span id="finder">Finder</span></p>
+		</div>
+
+		<div id="searchBar">
+			<a href="index.html">SEARCH MOVIES</a>
+		</div>
+	</div>
+	<div id="main">
+		<div id="movie"></div>
+	</div>
+</body>
+
 </html>
-<script>
-  // API_KEY = 92dc04c98bf954afad4318cbddffc5d6
-
-  async function getMovies() {
-    let url = `https://api.themoviedb.org/3/movie/popular?api_key=92dc04c98bf954afad4318cbddffc5d6&language=en-US&page=1`;
-
-    let response = await fetch(url);
-
-    let movieList = await response.json();
-    console.log(movieList.results);
-    appendMovies(movieList.results);
-  }
-
-  getMovies();
-
-  function appendMovies(data) {
-    let container = document.getElementById("movie");
-    container.innerHTML = null;
-
-    data.forEach(function (elem) {
-      let movie = document.createElement("div");
-      movie.id = "movieBlock";
-      movie.style.border = "3px solid #292929";
-      movie.style.borderRadius = "15px";
-      movie.style.height = "200px";
-      movie.style.width = "213px";
-      movie.style.display = "flex";
-      movie.style.flexDirection = "column";
-      movie.style.textAlign = "center";
-
-      let img = document.createElement("img");
-      img.src = `https://image.tmdb.org/t/p/w500${elem.backdrop_path}`;
-      img.style.borderTopLeftRadius = "15px";
-      img.style.borderTopRightRadius = "15px";
-      img.style.height = "80%";
-      img.style.width = "auto";
-
-      let title = document.createElement("p");
-      title.innerText = elem.title;
-
-      movie.append(img, title);
-      container.append(movie);
-    });
-  }
-</script>
+<script src="./trending.js"></script>

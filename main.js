@@ -1,6 +1,6 @@
 async function searchMovie(movieName) {
 	try {
-		let url = `http://www.omdbapi.com/?s=${movieName}&apikey=d01a74a8`;
+		let url = `https://www.omdbapi.com/?s=${movieName}&apikey=d01a74a8`;
 
 		let movie = await fetch(url);
 
@@ -20,7 +20,9 @@ async function main() {
 	showMovieList(data.Search);
 }
 
+
 let id;
+
 function debounceFunction(func, delay) {
 	if (id) {
 		clearTimeout(id);
@@ -38,7 +40,7 @@ function showMovieList(movieArray) {
 	searchBox.style.backgroundColor = "none";
 
 	let query = document.getElementById("query").value;
-	if (query == "") {
+	if (query == '') {
 		searchBox.style.display = "none";
 	} else {
 		searchBox.style.display = "block";
@@ -66,6 +68,7 @@ function showMovieList(movieArray) {
 		moviePoster.style.justifyContent = "center";
 		moviePoster.style.marginLeft = "10px";
 
+
 		let poster = document.createElement("img");
 		poster.src = Movie.Poster;
 		poster.alt = Movie.Title;
@@ -83,7 +86,7 @@ function showMovieList(movieArray) {
 
 		let year = document.createElement("p");
 		year.innerText = Movie.Year;
-		year.style.tex;
+		year.style.tex
 
 		movieInfo.append(title, year);
 
@@ -91,26 +94,31 @@ function showMovieList(movieArray) {
 
 		searchBox.append(movie);
 	});
+
 }
 
 async function fetchMovieData(imdbID) {
 	try {
-		let movieURL = `http://www.omdbapi.com/?apikey=d01a74a8&i=${imdbID}`;
+		let movieURL = `https://www.omdbapi.com/?apikey=d01a74a8&i=${imdbID}`;
 
 		let response = await fetch(movieURL);
 		console.log(response);
 
 		let movieData = await response.json();
 		showMovieData(movieData);
+
 	} catch (err) {
 		console.log(err);
 	}
 }
 
 function showMovieData(movieObject) {
-	console.log(movieObject);
+	//console.log(movieObject);
 
 	let movie = document.getElementById("movie");
+	
+	movie.classList.value = "visible";
+
 	movie.innerHTML = null;
 
 	let moviePoster = document.createElement("div");
@@ -146,6 +154,7 @@ function showMovieData(movieObject) {
 	movieInfo.style.flexDirection = "column";
 
 	movieInfo.style.textAlign = "center";
+
 
 	let list = document.createElement("ul");
 	list.id = "movieMiscInfo";
@@ -196,6 +205,7 @@ function showMovieData(movieObject) {
 		recommended.innerText = "RECOMMENDED!";
 		movieInfo.appendChild(recommended);
 	}
+
 
 	movie.append(moviePoster, movieInfo);
 }
